@@ -1,4 +1,4 @@
-package com.ivanleung.hksgweatherapp.ui;
+package com.ivanleung.hksgweatherapp.ui.weatherpage;
 
 public interface WeatherView {
 

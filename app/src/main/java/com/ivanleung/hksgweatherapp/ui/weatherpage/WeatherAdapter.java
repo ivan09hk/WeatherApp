@@ -1,4 +1,4 @@
-package com.ivanleung.hksgweatherapp.ui;
+package com.ivanleung.hksgweatherapp.ui.weatherpage;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;

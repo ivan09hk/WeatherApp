@@ -6,14 +6,15 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.ivanleung.hksgweatherapp.data.model.WeatherModel;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ApiModule {
 
-    private final String HKID = "1819730";
-    private final String SGID = "1880251";
+    public static final String HKID = "1819730";
+    public static final String SGID = "1880251";
     private final String APPID = "37959822167eb7e5f6fe73c48db44371";
 
     public static final int API_RESULT_SUCCESS = 1;
@@ -47,6 +48,8 @@ public class ApiModule {
         String mUrl = "http://api.openweathermap.org/data/2.5/group?id="+HKID+","+SGID+"&appid="+APPID;
         getApi(mUrl, ApiTag, (mApiTag, mResult, mResponse) -> {
             if(mApiCallBack != null){
+                WeatherModel weatherModel = new WeatherModel();
+                weatherModel.InsertWeatherToDB(mContext, mResponse);
                 mApiCallBack.OnApiCallBack(mApiTag, mResult, mResponse);
             }else{
                 mApiCallBack.OnApiCallBack(mApiTag, API_RESULT_FAIL, "Error");
