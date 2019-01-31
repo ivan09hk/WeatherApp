@@ -12,6 +12,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class WeatherModel implements WeatherModelInterface{
 
@@ -41,12 +42,14 @@ public class WeatherModel implements WeatherModelInterface{
     }
 
     @Override
-    public ArrayList<WeatherEntity> getHKWeather() {
-        return null;
+    public List<WeatherEntity> getHKWeather(Context mContext) {
+        WeatherDao weatherDao = WeatherDatabase.getDatabase(mContext).weatherDao();
+        return weatherDao.getHKWeather();
     }
 
     @Override
-    public ArrayList<WeatherEntity> getSGWeather() {
-        return null;
+    public List<WeatherEntity> getSGWeather(Context mContext) {
+        WeatherDao weatherDao = WeatherDatabase.getDatabase(mContext).weatherDao();
+        return weatherDao.getSGWeather();
     }
 }

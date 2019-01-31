@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">HKSGWeatherApp</string>
+
+    <string name="humidity_text">Humidity: %1$s</string>
 </resources>

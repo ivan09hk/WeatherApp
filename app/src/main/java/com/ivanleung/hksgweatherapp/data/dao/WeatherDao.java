@@ -14,10 +14,10 @@ import java.util.List;
 @Dao
 public interface WeatherDao {
 
-    @Query("SELECT * FROM "+ WeatherEntity.TABLE_WEATHER+" WHERE cityid="+ ApiModule.HKID+" ORDER BY DATE(dt) DESC LIMIT 6")
+    @Query("SELECT * FROM "+ WeatherEntity.TABLE_WEATHER+" WHERE cityid="+ ApiModule.HKID+" ORDER BY dt DESC LIMIT 6")
     public List<WeatherEntity> getHKWeather();
 
-    @Query("SELECT * FROM "+ WeatherEntity.TABLE_WEATHER+" WHERE cityid="+ ApiModule.SGID+" ORDER BY DATE(dt) DESC LIMIT 6")
+    @Query("SELECT * FROM "+ WeatherEntity.TABLE_WEATHER+" WHERE cityid="+ ApiModule.SGID+" ORDER BY dt DESC LIMIT 6")
     public List<WeatherEntity> getSGWeather();
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

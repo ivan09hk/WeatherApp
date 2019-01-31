@@ -5,13 +5,14 @@ import android.content.Context;
 import com.ivanleung.hksgweatherapp.data.entity.WeatherEntity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface WeatherModelInterface {
 
     void InsertWeatherToDB(Context mContext, String response);
 
-    ArrayList<WeatherEntity> getHKWeather();
+    List<WeatherEntity> getHKWeather(Context mContext);
 
-    ArrayList<WeatherEntity> getSGWeather();
+    List<WeatherEntity> getSGWeather(Context mContext);
 
 }
