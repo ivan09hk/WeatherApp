@@ -44,7 +44,7 @@ public class WeatherPresenter {
 
                     @Override
                     public void onError(Throwable e) {
-                        mDisposable.dispose();
+
                     }
 
                     @Override
@@ -59,7 +59,13 @@ public class WeatherPresenter {
             @Override
             public void OnApiCallBack(int mApiTag, int mResult, String mResponse) {
                 Log.i("Callback", ""+mResponse+" "+mResponse);
-                Weather(mContext);
+                if(mResult == ApiModule.API_RESULT_SUCCESS) {
+                    Weather(mContext);
+                }else{
+                    if(weatherView != null){
+                        weatherView.showErrorMessage(mResponse);
+                    }
+                }
             }
         });
     }

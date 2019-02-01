@@ -8,4 +8,6 @@ public interface WeatherView {
 
     void initAdapter(List<WeatherEntity> Weather);
 
+    void showErrorMessage(String errorMessage);
+
 }

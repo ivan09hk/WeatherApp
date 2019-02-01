@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.ivanleung.hksgweatherapp.R;
 import com.ivanleung.hksgweatherapp.data.entity.WeatherEntity;
@@ -53,6 +54,11 @@ public class WeatherFragment extends Fragment implements WeatherView{
             Log.i("APi", "Update");
             adapter.updateAdapter(Weather);
         }
+    }
+
+    @Override
+    public void showErrorMessage(String errorMessage) {
+        Toast.makeText(getContext(), errorMessage, Toast.LENGTH_SHORT).show();
     }
 
     @Override

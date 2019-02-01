@@ -67,7 +67,7 @@ public class ApiModule {
             mOnApiCallBack.OnApiCallBack(mApiTag, API_RESULT_SUCCESS, response);
         }, error -> {
             //TODO Error handle
-            mOnApiCallBack.OnApiCallBack(mApiTag, API_RESULT_FAIL, "Error");
+            mOnApiCallBack.OnApiCallBack(mApiTag, API_RESULT_FAIL, "Api Error");
         });
         this.addToRequestQueue(myStringRequest);
     }
